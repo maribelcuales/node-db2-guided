@@ -1,6 +1,7 @@
 const express = require('express');
 const knex = require('knex');
 
+///// Abstracted out Knex setup to dbConnection /////
 const db = knex({
   client: 'sqlite3',
   connection: {

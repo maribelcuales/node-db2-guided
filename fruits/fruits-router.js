@@ -1,5 +1,6 @@
 const express = require('express');
 const knex = require('knex');
+const knexfile = require("../knexfile.js"); 
 
 // const dbConfig = {
 //   client: 'sqlite3',  // driver 
@@ -9,6 +10,7 @@ const knex = require('knex');
 //   useNullAsDefault: true,  // for SQLite only 
 // }; 
 
+const dbConfig = knexfile.development; 
 const db = knex(dbConfig);
 
 const router = express.Router();

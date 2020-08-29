@@ -10,6 +10,8 @@ module.exports = {
     useNullAsDefault: true,  // for SQLite only 
   },
   // npx knex init 
+
+  // staging/testing server 
   staging: {
     client: 'postgresql',
     connection: {
@@ -26,6 +28,7 @@ module.exports = {
     }
   },
 
+  // production server (perhaps heroku) 
   production: {
     client: 'postgresql',
     connection: {

@@ -1,14 +1,7 @@
 const express = require('express');
 const knex = require('knex');
-const knexfile = require("../knexfile.js"); 
 
-// const dbConfig = {
-//   client: 'sqlite3',  // driver 
-//   connection: {
-//     filename: './data/produce.db3'
-//   },
-//   useNullAsDefault: true,  // for SQLite only 
-// }; 
+const knexfile = require("../knexfile.js"); 
 
 const dbConfig = knexfile.development; 
 const db = knex(dbConfig);

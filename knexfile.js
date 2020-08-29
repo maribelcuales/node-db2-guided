@@ -5,10 +5,11 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: './dev.sqlite3'
-    }
+      filename: './data/produce.db3'
+    },
+    useNullAsDefault: true,  // for SQLite only 
   },
-
+  // npx knex init 
   staging: {
     client: 'postgresql',
     connection: {

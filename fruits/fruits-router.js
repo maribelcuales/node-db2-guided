@@ -2,8 +2,9 @@ const express = require('express');
 const knex = require('knex');
 
 const knexfile = require("../knexfile.js"); 
-
-const dbConfig = knexfile.development; 
+const environment = process.env.NODE_ENV || "development"; // undefined | production  
+const dbConfig = knexfile[environment]; 
+// const dbConfig = knexfile.development; 
 const db = knex(dbConfig);
 
 const router = express.Router();
@@ -16,7 +17,7 @@ router.get('/', (req, res) => {
   .catch (err => {
     res.status(500).json({ message: 'Failed to retrieve fruits' });
   });
-});
+}); 
 
 router.get('/:id', (req, res) => {
   const { id } = req.params;

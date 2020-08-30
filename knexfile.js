@@ -2,8 +2,7 @@ module.exports = {
   development: {
     client: 'sqlite3',
     connection: {
-      // filename: './data/produce.db3',
-      filename: './data/veggies.db3'
+      filename: './data/produce.db3'
     },
     useNullAsDefault: true,  // for SQLite only 
   },
@@ -29,19 +28,10 @@ module.exports = {
 
   // production server (perhaps heroku) 
   production: {
-    client: 'postgresql',
+    client: 'sqlite3',
     connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      filename: './data/veggies.db3'
     },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'knex_migrations'
-    }
-  }
-
+    useNullAsDefault: true,  // for SQLite only 
+  },git 
 };
